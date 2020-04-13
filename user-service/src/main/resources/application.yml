@@ -4,4 +4,17 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/user_center?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
     username: root
     password: 159753
+  application:
+    name: usercenter-core-service
+dubbo:
+  registry:
+    address: 192.168.174.128:2181
+    protocol: zookeeper
+    check: false
+    timeout: 10000
+  protocol:
+    name: dubbo
+    port: 30003
+server:
+  port: 8080
 

@@ -1,7 +1,7 @@
 package com.dqzhou.userservice.component;
 
+import com.dqzhou.response.UserInfo;
 import com.dqzhou.userservice.entity.Member;
-import com.dqzhou.userservice.entity.UserInfo;
 
 public interface MemberComponent {
 

@@ -1,0 +1,11 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: usercenter-sdk
+dubbo:
+  registry:
+    address: 192.168.174.128:2181
+    protocol: zookeeper
+    check: false
+    timeout: 100000
