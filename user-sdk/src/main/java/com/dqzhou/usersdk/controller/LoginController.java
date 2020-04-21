@@ -1,7 +1,7 @@
 package com.dqzhou.usersdk.controller;
 
-import com.dqzhou.api.UserService;
-import com.dqzhou.response.UserInfo;
+import com.dqzhou.common.rpc.UserService;
+import com.dqzhou.common.response.UserInfo;
 import com.dqzhou.usersdk.form.LoginForm;
 import org.apache.dubbo.config.annotation.Reference;
 import org.slf4j.Logger;

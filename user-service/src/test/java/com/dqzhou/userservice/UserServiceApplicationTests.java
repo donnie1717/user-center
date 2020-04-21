@@ -1,6 +1,5 @@
 package com.dqzhou.userservice;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.dqzhou.userservice.entity.Member;

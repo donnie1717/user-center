@@ -1,6 +1,6 @@
-package com.dqzhou.api;
+package com.dqzhou.common.rpc;
 
-import com.dqzhou.response.UserInfo;
+import com.dqzhou.common.response.UserInfo;
 
 public interface UserService {
 

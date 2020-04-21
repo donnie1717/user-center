@@ -1,7 +1,7 @@
-package com.dqzhou.userservice.service;
+package com.dqzhou.userservice.rpc.impl;
 
-import com.dqzhou.api.UserService;
-import com.dqzhou.response.UserInfo;
+import com.dqzhou.common.rpc.UserService;
+import com.dqzhou.common.response.UserInfo;
 import com.dqzhou.userservice.component.MemberComponent;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;

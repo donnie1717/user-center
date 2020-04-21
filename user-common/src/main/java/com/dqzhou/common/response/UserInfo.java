@@ -1,4 +1,4 @@
-package com.dqzhou.response;
+package com.dqzhou.common.response;
 
 import lombok.Builder;
 import lombok.Data;

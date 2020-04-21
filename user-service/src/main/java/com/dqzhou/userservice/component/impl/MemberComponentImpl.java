@@ -2,7 +2,7 @@ package com.dqzhou.userservice.component.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.dqzhou.response.UserInfo;
+import com.dqzhou.common.response.UserInfo;
 import com.dqzhou.userservice.component.MemberComponent;
 import com.dqzhou.userservice.entity.Member;
 import com.dqzhou.userservice.mapper.MemberMapper;
