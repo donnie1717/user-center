@@ -6,6 +6,14 @@ spring:
     password: 159753
   application:
     name: usercenter-core-service
+  redis:
+    host: 192.168.174.128
+    port: 6379
+    jedis:
+      pool:
+        max-wait: -1ms
+        max-active: 8
+        max-idle: 8
 dubbo:
   registry:
     address: 192.168.174.128:2181
@@ -14,7 +22,12 @@ dubbo:
     timeout: 10000
   protocol:
     name: dubbo
-    port: 30003
+    port: 30004
 server:
   port: 8080
+user-center:
+  common:
+    redis-prefix: ucenter_
+
+
 

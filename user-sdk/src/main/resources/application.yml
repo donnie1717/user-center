@@ -9,3 +9,6 @@ dubbo:
     protocol: zookeeper
     check: false
     timeout: 100000
+user-sdk:
+  common:
+     region: 【中国】
