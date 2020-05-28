@@ -20,12 +20,10 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private MemberComponent memberComponent;
 
-    @Override
     public void checkPassword(String username, String password) {
         memberComponent.checkPassword(username, password);
     }
 
-    @Override
     public UserInfo getUserById(int uid) {
         return memberComponent.getMemberByUid(uid);
     }
