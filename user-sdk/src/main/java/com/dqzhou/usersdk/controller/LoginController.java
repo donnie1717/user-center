@@ -21,14 +21,14 @@ public class LoginController {
 
     private final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
-    @Reference
-    private UserService userService;
+//    @Reference
+//    private UserService userService;
 
     @RequestMapping("/login")
     @ResponseBody
     public String login(LoginForm form) {
-        UserInfo userInfo = userService.getUserById(1000000);
-        logger.info("user {} login", userInfo);
+//        UserInfo userInfo = userService.getUserById(1000000);
+//        logger.info("user {} login", userInfo);
         return "success";
     }
 

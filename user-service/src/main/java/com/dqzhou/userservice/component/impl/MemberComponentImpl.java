@@ -21,17 +21,14 @@ public class MemberComponentImpl implements MemberComponent {
     @Autowired
     private MemberMapper memberMapper;
 
-    @Override
     public void addMember(Member member) {
         memberMapper.insert(member);
     }
 
-    @Override
     public void checkPassword(String username, String password) {
 
     }
 
-    @Override
     public UserInfo getMemberByUid(int uid) {
         QueryWrapper<Member> queryWrapper = Wrappers.query();
         queryWrapper.eq("uid", uid);
