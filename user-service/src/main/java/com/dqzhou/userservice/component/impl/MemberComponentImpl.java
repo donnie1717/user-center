@@ -2,10 +2,10 @@ package com.dqzhou.userservice.component.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.dqzhou.common.response.UserInfo;
 import com.dqzhou.userservice.component.MemberComponent;
 import com.dqzhou.userservice.entity.Member;
 import com.dqzhou.userservice.mapper.MemberMapper;
+import com.userservice.facade.dto.UserInfoDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -29,11 +29,11 @@ public class MemberComponentImpl implements MemberComponent {
 
     }
 
-    public UserInfo getMemberByUid(int uid) {
+    public UserInfoDto getMemberByUid(int uid) {
         QueryWrapper<Member> queryWrapper = Wrappers.query();
         queryWrapper.eq("uid", uid);
         Member member = memberMapper.selectOne(queryWrapper);
-        UserInfo userInfo = UserInfo.builder()
+        UserInfoDto userInfo = UserInfoDto.builder()
                 .uid(member.getUid())
                 .avatar(member.getAvatar())
                 .nickname(member.getNickname())

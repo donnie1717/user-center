@@ -1,8 +1,8 @@
 package com.dqzhou.usersdk.controller;
 
-import com.dqzhou.common.rpc.UserService;
-import com.dqzhou.common.response.UserInfo;
 import com.dqzhou.usersdk.form.LoginForm;
+import com.userservice.facade.dto.UserInfoDto;
+import com.userservice.facade.service.IUserService;
 import org.apache.dubbo.config.annotation.Reference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,14 +21,14 @@ public class LoginController {
 
     private final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
-//    @Reference
-//    private UserService userService;
+    @Reference
+    private IUserService userService;
 
     @RequestMapping("/login")
     @ResponseBody
     public String login(LoginForm form) {
-//        UserInfo userInfo = userService.getUserById(1000000);
-//        logger.info("user {} login", userInfo);
+        UserInfoDto userInfo = userService.getUserById(1000000);
+        logger.info("user {} login", userInfo);
         return "success";
     }
 

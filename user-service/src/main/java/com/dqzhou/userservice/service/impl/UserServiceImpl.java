@@ -1,8 +1,8 @@
 package com.dqzhou.userservice.service.impl;
 
-import com.dqzhou.common.response.UserInfo;
-import com.dqzhou.common.rpc.UserService;
 import com.dqzhou.userservice.component.MemberComponent;
+import com.userservice.facade.dto.UserInfoDto;
+import com.userservice.facade.service.IUserService;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -24,7 +24,7 @@ public class UserServiceImpl implements IUserService {
         memberComponent.checkPassword(username, password);
     }
 
-    public UserInfo getUserById(int uid) {
+    public UserInfoDto getUserById(int uid) {
         return memberComponent.getMemberByUid(uid);
     }
 }
