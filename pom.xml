@@ -21,6 +21,7 @@
         <module>user-sdk</module>
         <module>user-service</module>
         <module>user-common</module>
+        <module>user-service-facade</module>
     </modules>
 
     <dependencyManagement>
@@ -93,6 +94,5 @@
             <optional>true</optional>
         </dependency>
     </dependencies>
-
 
 </project>

@@ -1,4 +1,4 @@
-package com.dqzhou.common.response;
+package com.userservice.facade.dto;
 
 import lombok.Builder;
 import lombok.Data;
@@ -15,7 +15,7 @@ import java.io.Serializable;
 @Data
 @Builder
 @ToString
-public class UserInfo implements Serializable {
+public class UserInfoDto implements Serializable {
 
     private String username;
 

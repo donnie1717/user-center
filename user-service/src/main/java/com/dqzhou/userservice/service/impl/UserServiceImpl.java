@@ -1,7 +1,7 @@
-package com.dqzhou.userservice.rpc.impl;
+package com.dqzhou.userservice.service.impl;
 
-import com.dqzhou.common.rpc.UserService;
 import com.dqzhou.common.response.UserInfo;
+import com.dqzhou.common.rpc.UserService;
 import com.dqzhou.userservice.component.MemberComponent;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
  **/
 @Component
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements IUserService {
 
     @Autowired
     private MemberComponent memberComponent;
