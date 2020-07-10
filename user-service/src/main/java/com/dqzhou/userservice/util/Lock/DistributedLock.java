@@ -8,8 +8,8 @@ package com.dqzhou.userservice.util.Lock;
  **/
 public interface DistributedLock {
 
-    String acquire();
+    boolean acquire(String lockeName, String requestId, long expireTime);
 
-    String releaseLock();
+    boolean releaseLock(String lockName, String requestId);
 
 }
