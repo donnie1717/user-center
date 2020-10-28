@@ -15,7 +15,7 @@ import java.io.Serializable;
 @Data
 @Builder
 @ToString
-public class UserInfoDto implements Serializable {
+public class UserInfoDTO implements Serializable {
 
     private String username;
 

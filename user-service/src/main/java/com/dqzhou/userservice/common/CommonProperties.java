@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  **/
 @Component
 @Data
-@ConfigurationProperties(prefix = "user-center.common")
+@ConfigurationProperties(prefix = "uc.common")
 public class CommonProperties {
 
     private String redisPrefix;

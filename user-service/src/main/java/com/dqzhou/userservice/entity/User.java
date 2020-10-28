@@ -17,8 +17,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@TableName("tbl_member")
-public class Member {
+@TableName("tbl_user")
+public class User {
 
     @TableId(value = "id")
     private int id;

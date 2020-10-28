@@ -10,6 +10,7 @@
         <dubbo.version>2.7.6</dubbo.version>
         <zookeeper.version>3.4.5</zookeeper.version>
         <curator.version>2.12.0</curator.version>
+        <redisson.version>3.13.6</redisson.version>
     </properties>
 
     <groupId>com.dqzhou</groupId>
@@ -83,6 +84,11 @@
                 <groupId>org.apache.zookeeper</groupId>
                 <artifactId>zookeeper</artifactId>
                 <version>${zookeeper.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson</artifactId>
+                <version>${redisson.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

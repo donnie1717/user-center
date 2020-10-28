@@ -3,8 +3,8 @@ package com.dqzhou.userservice;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.dqzhou.userservice.common.CommonProperties;
-import com.dqzhou.userservice.entity.Member;
-import com.dqzhou.userservice.mapper.MemberMapper;
+import com.dqzhou.userservice.entity.User;
+import com.dqzhou.userservice.mapper.UserMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -20,7 +20,7 @@ class UserServiceApplicationTests {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceApplicationTests.class);
 
     @Autowired
-    private MemberMapper memberMapper;
+    private UserMapper userMapper;
 
     @Autowired
     private CommonProperties commonProperties;
@@ -35,21 +35,21 @@ class UserServiceApplicationTests {
 
     @Test
     void testSelect() {
-        QueryWrapper<Member> memberQueryWrapper = Wrappers.query();
+        QueryWrapper<User> memberQueryWrapper = Wrappers.query();
         memberQueryWrapper.eq("uid", 1000000);
-        Member member = memberMapper.selectOne(memberQueryWrapper);
+        User member = userMapper.selectOne(memberQueryWrapper);
         LOGGER.info("userinfo is [{}]", member.toString());
         Assertions.assertEquals("donnie", member.getNickname());
     }
 
     @Test
     void testSaveMember() {
-        Member member = Member.builder()
+        User member = User.builder()
                 .nickname("donnie")
                 .username("fdacxxxxzwa")
                 .uid(1000000)
                 .password("123456").build();
-        int rows = memberMapper.insert(member);
+        int rows = userMapper.insert(member);
         Assertions.assertEquals(1, rows);
     }
 

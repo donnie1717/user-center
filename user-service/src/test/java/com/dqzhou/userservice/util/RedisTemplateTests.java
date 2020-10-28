@@ -1,12 +1,13 @@
 package com.dqzhou.userservice.util;
 
 import org.junit.jupiter.api.Test;
+import org.redisson.api.RedissonClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.redis.core.RedisTemplate;
-import redis.clients.jedis.JedisCluster;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * @Description:
@@ -20,12 +21,15 @@ public class RedisTemplateTests {
     Logger logger = LoggerFactory.getLogger(RedisTemplateTests.class);
 
     @Autowired
-    private JedisCluster jedisCluster;
+    private RedissonClient redissonClient;
 
     @Test
     void testGet() {
-        String value = jedisCluster.get("kobe");
-        logger.info("redis value is {}", value);
+        redissonClient.getBucket("kobe").set("bryant");
+
+        String value = String.valueOf(redissonClient.getBucket("kobe").get());
+
+        assertEquals("bryant", value);
     }
 
 }
