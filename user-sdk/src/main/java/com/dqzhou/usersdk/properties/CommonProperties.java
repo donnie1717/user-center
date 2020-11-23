@@ -5,9 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
- * @Description:
- * @Author: DonnieZhou
- * @Mail: dqzhou5180@foxmail.com
+ * @Author: Donnie
  * @Create 2020-04-25 15:33
  **/
 @Component

@@ -12,9 +12,7 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 
 /**
- * @Description:
- * @Author: DonnieZhou
- * @Mail: dqzhou5180@foxmail.com
+ * @Author: Donnie
  * @Create 2020-06-01 12:06
  **/
 @Aspect

@@ -6,15 +6,12 @@ import com.dqzhou.userservice.entity.User;
 import com.dqzhou.userservice.mapper.UserMapper;
 import com.dqzhou.userservice.service.UserService;
 import com.userservice.facade.dto.UserInfoDTO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
 /**
- * @Description:
- * @Author: DonnieZhou
- * @Mail: dqzhou5180@foxmail.com
+ * @Author: Donnie
  * @Create 2020-04-08 22:05
  **/
 @Service
@@ -34,15 +31,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserInfoDTO getByUserId(int uid) {
+    public UserInfoDTO getByPhone(String phone) {
         QueryWrapper<User> queryWrapper = Wrappers.query();
-        queryWrapper.eq("uid", uid);
+        queryWrapper.eq("phone", phone);
         User user = userMapper.selectOne(queryWrapper);
         UserInfoDTO userInfo = UserInfoDTO.builder()
-                .uid(user.getUid())
                 .avatar(user.getAvatar())
                 .nickname(user.getNickname())
-                .username(user.getUsername()).build();
+                .phone(user.getPhone())
+                .build();
         return userInfo;
     }
 }

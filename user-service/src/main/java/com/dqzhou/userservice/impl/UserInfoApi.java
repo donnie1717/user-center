@@ -1,5 +1,6 @@
 package com.dqzhou.userservice.impl;
 
+import com.dqzhou.common.constants.UserCenterConstants;
 import com.dqzhou.userservice.service.UserService;
 import com.userservice.facade.dto.UserInfoDTO;
 import com.userservice.facade.api.IUserInfoApi;
@@ -8,13 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * @Description:
- * @Author: DonnieZhou
- * @Mail: dqzhou5180@foxmail.com
+ * @Author: ZhouDongqi
  * @Create 2020-04-11 21:54
  **/
 @Component
-@Service
+@Service(version = UserCenterConstants.DUBBO_VERSION)
 public class UserInfoApi implements IUserInfoApi {
 
     @Autowired
@@ -24,7 +23,7 @@ public class UserInfoApi implements IUserInfoApi {
         userService.checkPassword(username, password);
     }
 
-    public UserInfoDTO getUserById(int uid) {
-        return userService.getByUserId(uid);
+    public UserInfoDTO getByPhone(String phone) {
+        return userService.getByPhone(phone);
     }
 }

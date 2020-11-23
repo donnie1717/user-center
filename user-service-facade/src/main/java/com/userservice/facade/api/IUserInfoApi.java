@@ -10,5 +10,5 @@ public interface IUserInfoApi {
 
     void checkPassword(String username, String password);
 
-    UserInfoDTO getUserById(int uid);
+    UserInfoDTO getByPhone(String phone);
 }

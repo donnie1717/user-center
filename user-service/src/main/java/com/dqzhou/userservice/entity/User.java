@@ -1,5 +1,6 @@
 package com.dqzhou.userservice.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
@@ -8,24 +9,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * @Description:
- * @Author: DonnieZhou
- * @Mail: dqzhou5180@foxmail.com
+ * @Author: Donnie
  * @Create 2020-04-07 23:25
  **/
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@TableName("tbl_user")
+@TableName(value = "user", keepGlobalPrefix = true)
 public class User {
 
-    @TableId(value = "id")
-    private int id;
+    @TableId(value = "id", type = IdType.ASSIGN_UUID)
+    private String id;
 
-    private String username;
-
-    private int uid;
+    private String phone;
 
     private String nickname;
 

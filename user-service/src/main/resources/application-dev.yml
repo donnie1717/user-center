@@ -18,10 +18,11 @@ dubbo:
 server:
   port: 8080
 uc:
-  common:
-    redis-prefix: ucenter_
   redis:
       host: 127.0.0.1:6379
       timeout: 5s
-
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix: tbl_
 

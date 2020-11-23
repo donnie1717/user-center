@@ -7,13 +7,13 @@ import org.apache.dubbo.config.annotation.Reference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * @Description:
- * @Author: DonnieZhou
- * @Mail: dqzhou5180@foxmail.com
+ * @Author: Donnie
  * @Create 2020-04-11 19:33
  **/
 @Controller
@@ -24,10 +24,10 @@ public class LoginController {
     @Reference
     private IUserInfoApi userService;
 
-    @RequestMapping("/login")
+    @PostMapping("/login")
     @ResponseBody
-    public String login(LoginForm form) {
-        UserInfoDTO userInfo = userService.getUserById(1000000);
+    public String login(@RequestBody LoginForm form) {
+        UserInfoDTO userInfo = userService.getByPhone(form.getPhone());
         logger.info("user {} login", userInfo);
         return "success";
     }

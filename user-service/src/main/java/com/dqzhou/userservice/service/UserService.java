@@ -14,6 +14,6 @@ public interface UserService {
 
     void checkPassword(String username, String password);
 
-    UserInfoDTO getByUserId(int uid);
+    UserInfoDTO getByPhone(String phone);
 
 }
