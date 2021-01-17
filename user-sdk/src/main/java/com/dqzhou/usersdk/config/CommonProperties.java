@@ -1,4 +1,4 @@
-package com.dqzhou.usersdk.properties;
+package com.dqzhou.usersdk.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

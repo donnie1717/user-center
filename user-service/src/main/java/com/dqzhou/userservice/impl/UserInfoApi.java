@@ -13,16 +13,18 @@ import org.springframework.stereotype.Component;
  * @Create 2020-04-11 21:54
  **/
 @Component
-@Service(version = UserCenterConstants.DUBBO_VERSION)
+@Service(version = UserCenterConstants.DUBBO_DEFAULT_VERSION)
 public class UserInfoApi implements IUserInfoApi {
 
     @Autowired
     private UserService userService;
 
+    @Override
     public void checkPassword(String username, String password) {
         userService.checkPassword(username, password);
     }
 
+    @Override
     public UserInfoDTO getByPhone(String phone) {
         return userService.getByPhone(phone);
     }

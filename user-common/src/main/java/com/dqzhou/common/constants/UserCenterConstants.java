@@ -7,6 +7,6 @@ package com.dqzhou.common.constants;
  **/
 public class UserCenterConstants {
 
-    public static final String DUBBO_VERSION = "0.0.1";
+    public static final String DUBBO_DEFAULT_VERSION = "1.0.0";
 
 }

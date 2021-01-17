@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 
 /**
- * @Author: Donnie
+ * @Author: ZhouDongqi
  * @Create 2020-04-08 22:05
  **/
 @Service
@@ -35,11 +35,10 @@ public class UserServiceImpl implements UserService {
         QueryWrapper<User> queryWrapper = Wrappers.query();
         queryWrapper.eq("phone", phone);
         User user = userMapper.selectOne(queryWrapper);
-        UserInfoDTO userInfo = UserInfoDTO.builder()
+        return UserInfoDTO.builder()
                 .avatar(user.getAvatar())
                 .nickname(user.getNickname())
                 .phone(user.getPhone())
                 .build();
-        return userInfo;
     }
 }

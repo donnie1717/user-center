@@ -1,6 +1,6 @@
 package com.dqzhou.usersdk;
 
-import com.dqzhou.usersdk.properties.CommonProperties;
+import com.dqzhou.usersdk.config.CommonProperties;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
