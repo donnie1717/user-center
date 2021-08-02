@@ -6,6 +6,11 @@ spring:
     password: 159753
   application:
     name: usercenter-core-service
+  rabbitmq:
+    host: localhost
+    username: user
+    password: 123456
+    port: 5672
 dubbo:
   registry:
     address: 127.0.0.1:2181
