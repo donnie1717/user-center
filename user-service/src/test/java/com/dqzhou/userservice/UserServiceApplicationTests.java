@@ -1,44 +1,50 @@
 package com.dqzhou.userservice;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.dqzhou.userservice.entity.Member;
-import com.dqzhou.userservice.mapper.MemberMapper;
+import com.dqzhou.userservice.entity.User;
+import com.dqzhou.userservice.mapper.UserMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 
 
 @SpringBootTest
+@Slf4j
 class UserServiceApplicationTests {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceApplicationTests.class);
+    @Autowired
+    private UserMapper userMapper;
 
     @Autowired
-    private MemberMapper memberMapper;
+    private RedisTemplate redisTemplate;
 
     @Test
     void testSelect() {
-        QueryWrapper<Member> memberQueryWrapper = Wrappers.query();
+        QueryWrapper<User> memberQueryWrapper = Wrappers.query();
         memberQueryWrapper.eq("uid", 1000000);
-        Member member = memberMapper.selectOne(memberQueryWrapper);
-        LOGGER.info("userinfo is [{}]", member.toString());
+        User member = userMapper.selectOne(memberQueryWrapper);
+        log.info("userinfo is [{}]", member.toString());
         Assertions.assertEquals("donnie", member.getNickname());
     }
 
     @Test
     void testSaveMember() {
-        Member member = Member.builder()
+        User member = User.builder()
                 .nickname("donnie")
-                .username("fdacxxxxzwa")
-                .uid(1000000)
-                .password("123456").build();
-        int rows = memberMapper.insert(member);
+                .password("123456")
+                .build();
+        int rows = userMapper.insert(member);
         Assertions.assertEquals(1, rows);
+    }
+
+    @Test
+    void testRedisConnect() {
+        redisTemplate.opsForValue().set("Kobe","Bryant");
+        System.out.println(redisTemplate.opsForValue().get("Kobe"));
     }
 
 }
