@@ -9,7 +9,7 @@
         <spring-boot.version>2.2.6.RELEASE</spring-boot.version>
         <dubbo.version>2.7.13</dubbo.version>
         <zookeeper.version>3.4.14</zookeeper.version>
-        <curator.version>2.12.0</curator.version>
+        <curator.version>4.2.0</curator.version>
         <redisson.version>3.13.6</redisson.version>
         <jsonwebtoken.version>0.9.0</jsonwebtoken.version>
         <swagger.version>2.7.0</swagger.version>
@@ -78,10 +78,27 @@
                 <groupId>org.apache.curator</groupId>
                 <artifactId>curator-framework</artifactId>
                 <version>${curator.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.zookeeper</groupId>
+                        <artifactId>zookeeper</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.apache.curator</groupId>
                 <artifactId>curator-recipes</artifactId>
+                <version>${curator.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.zookeeper</groupId>
+                        <artifactId>zookeeper</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-x-discovery</artifactId>
                 <version>${curator.version}</version>
             </dependency>
             <dependency>
