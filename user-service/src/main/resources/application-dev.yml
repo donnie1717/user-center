@@ -24,8 +24,8 @@ server:
   port: 8080
 uc:
   redis:
-      host: 127.0.0.1:6379
-      timeout: 5s
+    host: 127.0.0.1:6379
+    timeout: 5s
 mybatis-plus:
   global-config:
     db-config:

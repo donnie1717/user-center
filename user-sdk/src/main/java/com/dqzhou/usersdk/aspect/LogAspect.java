@@ -27,7 +27,7 @@ public class LogAspect {
     public void logRecord() {}
 
     @Around("logRecord()")
-    public Object watchMessage(ProceedingJoinPoint joinPoint) {
+    public Object watchMessage(ProceedingJoinPoint joinPoint) throws Throwable {
         Object result = null;
         try {
             log.debug("request send at " + LocalDateTime.now());
@@ -36,6 +36,7 @@ public class LogAspect {
             log.debug("response send at " + LocalDateTime.now());
         } catch (Throwable throwable) {
             log.error("fail to send message at " + LocalDateTime.now());
+            throw throwable;
         }
         return result;
     }

@@ -35,11 +35,16 @@ public class UserLoginController {
     @PostMapping("/login")
     @ResponseBody
     public Map<String, Object> login(@RequestBody LoginForm form) {
+        if (form.getPhone().startsWith("100")) {
+            throw new RuntimeException("手机号码非法");
+        }
+
         UserInfoDTO userInfo = userInfoApi.getByPhone(form.getPhone());
         logger.info("user {} login", userInfo);
         Map<String, Object> result = new HashMap<>();
         result.put("code", 0);
         result.put("msg", "success");
+
         return result;
     }
 

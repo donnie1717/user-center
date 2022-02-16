@@ -1,19 +1,16 @@
-package com.dqzhou.userservice.common;
+package com.dqzhou.redis.starter.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-import static com.dqzhou.userservice.common.RedisProperties.PREFIX;
+import static com.dqzhou.redis.starter.config.RedisProperties.PREFIX;
 
 /**
- * @Description:
- * @Author: DonnieZhou
- * @Mail: dqzhou5180@foxmail.com
- * @Create 2020-06-01 23:08
+ * @Author: ZhouDongqi
+ * @Create 2022/2/11 下午4:27
  **/
 @Data
-@Component
 @ConfigurationProperties(prefix = PREFIX)
 public class RedisProperties {
 

@@ -27,6 +27,7 @@
         <module>user-common</module>
         <module>user-service-facade</module>
         <module>user-consumer</module>
+        <module>user-redis-starter</module>
     </modules>
 
     <dependencyManagement>
